@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hasil Konsultasi</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Hasil Konsultasi</h2>
+    <p>Berdasarkan jawabanmu, ekstrakurikuler yang cocok untukmu adalah:</p>
+    <div class="result-box">{{ result }}</div>
+    <a href="{{ url_for('index') }}" class="btn">Kembali ke Awal</a>
+  </div>
+</body>
+</html>

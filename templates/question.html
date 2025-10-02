@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Konsultasi</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <div id="chatBox" class="chat-box"></div>
+    <div class="buttons">
+      <button onclick="sendAnswer('Ya')">Ya</button>
+      <button onclick="sendAnswer('Tidak')">Tidak</button>
+    </div>
+  </div>
+
+  <script>
+    const questions = {{ questions | tojson | safe }};
+    let current = 0;
+
+    function showQuestion(index) {
+      const chatBox = document.getElementById("chatBox");
+      const botBubble = document.createElement("div");
+      botBubble.classList.add("chat-bubble", "bot");
+      botBubble.innerText = questions[index];
+      chatBox.appendChild(botBubble);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function sendAnswer(response) {
+      const chatBox = document.getElementById("chatBox");
+
+      const userBubble = document.createElement("div");
+      userBubble.classList.add("chat-bubble", "user");
+      userBubble.innerText = response;
+      chatBox.appendChild(userBubble);
+
+      fetch("/save_answer", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "answer=" + encodeURIComponent(response)
+      }).then(() => {
+        current++;
+        if (current < questions.length) {
+          setTimeout(() => {
+            showQuestion(current);
+          }, 600);
+        } else {
+          window.location.href = "/result";
+        }
+      });
+    }
+
+    window.onload = function() {
+      showQuestion(0);
+    };
+  </script>
+</body>
+</html>
