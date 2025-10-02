@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Rekomendasi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .result-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #4facfe;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #00c3ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1>Hasil Konsultasi</h1>
+        <p>Rekomendasi untukmu adalah:</p>
+        <p><strong>{{ rekomendasi }}</strong></p>
+        <a href="{{ url_for('index') }}" class="btn">Kembali ke Awal</a>
+    </div>
+</body>
+</html>
