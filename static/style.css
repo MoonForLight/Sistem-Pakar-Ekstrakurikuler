@@ -1,13 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f0f2f5;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     margin: 0;
     padding: 0;
+    height: 100vh; 
 }
 
 .container {
     width: 500px;
-    margin: 50px auto;
+    margin: 200px auto;
     text-align: center;
     background: #fff;
     padding: 30px;
@@ -27,7 +28,7 @@ body {
 
 .chat-container {
     width: 400px;
-    margin: 50px auto;
+    margin: 150px auto;
     background: #fff;
     border-radius: 12px;
     padding: 20px;
@@ -70,4 +71,19 @@ body {
     color: white;
     font-size: 18px;
     width: fit-content;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.btn-answer {
+    background: #fbc2eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-self: center;
 }
