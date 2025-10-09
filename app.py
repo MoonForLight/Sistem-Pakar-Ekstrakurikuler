@@ -28,34 +28,71 @@ questions = [
 ]
 
 # fungsi untuk menentukan hasil
+
+
 def get_result(answers):
-    score = {
-        "A01 - Seni Musik": 0,
-        "A02 - Seni Tari": 0,
-        "A03 - Pencak Silat": 0,
-        "A04 - Futsal": 0,
-        "A05 - Pramuka": 0,
-        "A06 - Paskibra": 0
-    }
+    # Urutan answers sama dengan urutan questions (index 0 = jawaban pertanyaan ke-1, dst.)
 
-    if len(answers) >= 20:   # biar aman
-        if answers[0] == "Ya" or answers[1] == "Ya":
-            score["A01 - Seni Musik"] += 2
-        if answers[4] == "Ya" or answers[19] == "Ya":
-            score["A02 - Seni Tari"] += 2
-        if answers[6] == "Ya" or answers[7] == "Ya":
-            score["A03 - Pencak Silat"] += 2
-        if answers[9] == "Ya":
-            score["A04 - Futsal"] += 2
-        if answers[5] == "Ya" or answers[15] == "Ya":
-            score["A05 - Pramuka"] += 2
-        if answers[11] == "Ya" or answers[17] == "Ya" or answers[18] == "Ya":
-            score["A06 - Paskibra"] += 2
+    # Rule 1: Seni Musik [cite: 150]
+    if (answers[0] == "Ya" and   # B01: Suka bernyanyi
+        answers[1] == "Ya" and   # B02: Suka bermain musik
+        answers[2] == "Ya" and   # B03: Konsentrasi dan ingatan kuat
+            answers[6] == "Ya"):     # B07: Suka bekerja sama dalam tim
+        return "A01 - Seni Musik"
 
-    best = max(score, key=score.get)
-    if score[best] == 0:
-        return "Belum ada hasil"
-    return best
+    # Rule 2: Seni Tari [cite: 151]
+    if (answers[4] == "Ya" and   # B05: Suka menari
+        answers[5] == "Ya" and   # B06: Suka meniru gerakan tubuh
+        answers[2] == "Ya" and   # B03: Konsentrasi dan ingatan kuat
+        answers[3] == "Ya" and   # B04: Fisik sehat
+        answers[6] == "Ya" and   # B07: Suka bekerja sama dalam tim
+            answers[12] == "Ya"):    # B13: Berat ideal
+        return "A02 - Seni Tari"
+
+    # Rule 3: Pencak Silat [cite: 152]
+    if (answers[7] == "Ya" and   # B08: Suka bela diri
+        answers[8] == "Ya" and   # B09: Pantang menyerah
+        answers[9] == "Ya" and   # B10: Mental kuat
+        answers[3] == "Ya" and   # B04: Fisik sehat
+            answers[6] == "Ya"):     # B07: Suka bekerja sama dalam tim
+        return "A03 - Pencak Silat"
+
+    # Rule 4: Futsal [cite: 153]
+    if (answers[10] == "Ya" and  # B11: Suka futsal/bola
+        answers[8] == "Ya" and   # B09: Pantang menyerah
+        answers[11] == "Ya" and  # B12: Disiplin
+        answers[9] == "Ya" and   # B10: Mental kuat
+        answers[3] == "Ya" and   # B04: Fisik sehat
+        answers[6] == "Ya" and   # B07: Suka bekerja sama dalam tim
+            answers[12] == "Ya"):    # B13: Berat ideal
+        return "A04 - Futsal"
+
+    # Rule 5: Pramuka [cite: 154]
+    if (answers[13] == "Ya" and  # B14: Jujur
+        answers[14] == "Ya" and  # B15: Tidak takut alam
+        answers[15] == "Ya" and  # B16: Jiwa kepemimpinan
+        answers[8] == "Ya" and   # B09: Pantang menyerah
+        answers[16] == "Ya" and  # B17: Bertanggung jawab
+        answers[11] == "Ya" and  # B12: Disiplin
+        answers[9] == "Ya" and   # B10: Mental kuat
+        answers[3] == "Ya" and   # B04: Fisik sehat
+            answers[6] == "Ya"):     # B07: Suka bekerja sama dalam tim
+        return "A05 - Pramuka"
+
+    # Rule 6: Paskibra [cite: 155]
+    if (answers[17] == "Ya" and  # B18: Tinggi ideal
+        answers[18] == "Ya" and  # B19: Postur tegap
+        answers[19] == "Ya" and  # B20: Mampu PBB
+        answers[12] == "Ya" and  # B13: Berat ideal
+        answers[8] == "Ya" and   # B09: Pantang menyerah
+        answers[11] == "Ya" and  # B12: Disiplin
+        answers[9] == "Ya" and   # B10: Mental kuat
+        answers[3] == "Ya" and   # B04: Fisik sehat
+            answers[6] == "Ya"):     # B07: Suka bekerja sama dalam tim
+        return "A06 - Paskibra"
+
+    # Jika tidak ada aturan yang cocok
+    return "Tidak ditemukan rekomendasi yang cocok berdasarkan jawaban Anda."
 
 
 @app.route("/")
