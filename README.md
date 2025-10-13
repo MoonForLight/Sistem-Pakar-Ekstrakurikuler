@@ -5,7 +5,7 @@ Tujuannya sistem ini adalah untuk memberikan rekomendasi kegiatan ekstrakurikule
 # **Deskripsi Singkat**
 Aplikasi ini menggunakan pendekatan _rule-based Expert system_, ini dirancang untuk membantu siswa menentukan kegiatan ekstrakurikuler yang paling sesuai dengan minat, kemampuan, serta karakteristik pribadinya. Sistem ini meniru cara berpikir seorang konselor atau guru pembimbing dengan menggunakan pendekatan, dimana keputusan akhir ditentukan melalui sekumpulan aturan logika (_if–then rules_) berdasarkan jawaban siswa terhadap serangkaian pertanyaan. Setiap pertanyaan mewakili aspek tertentu dari kepribadian, kebiasaan, dan kemampuan fisik pengguna, seperti kemampuan bekerja sama, daya ingat, kedisiplinan, serta ketahanan mental dan fisik. Setelah pengguna menjawab seluruh pertanyaan, sistem akan menganalisis pola jawaban tersebut untuk memberikan rekomendasi kegiatan ekstrakurikuler yang paling cocok.
 
--** Seni Musik**
+- **Seni Musik**
 - **Seni Tari**
 - **Pencak Silat**
 - **Futsal**
