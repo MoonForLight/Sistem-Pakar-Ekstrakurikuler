@@ -36,7 +36,8 @@ Contoh aturan:
     return "A01 - Seni Musik" </pre>
 Setiap aturan merepresentasikan kombinasi jawaban “Ya” yang menunjukkan kecenderungan minat terhadap suatu bidang ekstrakurikuler. Jika tidak ada aturan yang cocok, sistem akan menampilkan pesan:
 **"Tidak ditemukan rekomendasi yang cocok berdasarkan jawaban Anda."**
-<img width="1050" height="433" alt="image" src="https://github.com/user-attachments/assets/94e558e4-bf4e-473d-a478-d10a881e6fae" />
+<img width="1770" height="964" alt="image" src="https://github.com/user-attachments/assets/e022890d-6751-4e46-941b-594ab667c5c6" />
+
 
 # **Desain Halaman**
 1. **index.html**
@@ -52,11 +53,13 @@ Setiap aturan merepresentasikan kombinasi jawaban “Ya” yang menunjukkan kece
 Ya, Ya, Ya, Ya, Tidak, Ya, Ya, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak, Tidak
 Output:
 **"Rekomendasi Ekstrakurikuler Anda: A01 - Seni Musik"**
-<img width="1107" height="482" alt="image" src="https://github.com/user-attachments/assets/ca4af130-f9f5-4560-8558-a6b987e25a37" />
+<img width="1733" height="951" alt="image" src="https://github.com/user-attachments/assets/f036240b-42ee-4c64-bfa3-20a35eb180c6" />
 
 # **Contoh Tampilan Output**
-<img width="1348" height="692" alt="image" src="https://github.com/user-attachments/assets/fccc0ae8-2cc4-47f6-8ecd-20025b6f610f" />
-<img width="796" height="691" alt="image" src="https://github.com/user-attachments/assets/66fe02c4-cf5d-4163-a376-827a0d6cf130" />
+<img width="1766" height="976" alt="image" src="https://github.com/user-attachments/assets/dae69571-5b29-4b49-a4ce-96c82e68c4cc" />
+<img width="1773" height="966" alt="image" src="https://github.com/user-attachments/assets/545227d6-51ef-4cf7-9be5-c93aa868cd04" />
+<img width="1733" height="965" alt="image" src="https://github.com/user-attachments/assets/a97b8c99-75ef-4b70-981c-a737bcefef04" />
+
 
 # **Tim Pengembang**
 
