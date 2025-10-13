@@ -14,26 +14,26 @@ Aplikasi ini menggunakan pendekatan _rule-based Expert system_, ini dirancang un
 
 # **Teknologi yang Digunakan**
 
-**- Python 3.x**
-**- Flask** – Web framework untuk routing dan session handling
-**- HTML5, CSS3** – Tampilan front-end
-**- Jinja2 Template Engine** – Integrasi data dari Python ke HTML
+- Python 3.x
+- Flask– Web framework untuk routing dan session handling
+- HTML5, CSS3– Tampilan front-end
+- Jinja2 Template Engine– Integrasi data dari Python ke HTML
 
 # **Alur Sistem**
 
--**index.html** – Halaman pembuka yang menjelaskan tujuan aplikasi dan menyediakan tombol Mulai Konsultasi.
--**question.html** – Menampilkan daftar pertanyaan yang harus dijawab pengguna satu per satu dengan pilihan “Ya” atau “Tidak”.
--**save_answer (Flask Route)** – Menyimpan setiap jawaban ke dalam session Flask.
--**result.html** – Setelah seluruh pertanyaan dijawab, sistem akan memproses seluruh jawaban dan menampilkan hasil akhir berupa rekomendasi ekstrakurikuler.
+- index.html– Halaman pembuka yang menjelaskan tujuan aplikasi dan menyediakan tombol Mulai Konsultasi.
+- question.html– Menampilkan daftar pertanyaan yang harus dijawab pengguna satu per satu dengan pilihan “Ya” atau “Tidak”.
+- save_answer (Flask Route)– Menyimpan setiap jawaban ke dalam session Flask.
+- result.html– Setelah seluruh pertanyaan dijawab, sistem akan memproses seluruh jawaban dan menampilkan hasil akhir berupa rekomendasi ekstrakurikuler.
 
 # **Mekanisme Penalaran (_Rule-Based System_)**
 Fungsi utama sistem pakar ini adalah get_result(answers) yang berisi sejumlah aturan (rules).
 Contoh aturan:
-if (answers[0] == "Ya" and
+<pre> ```if (answers[0] == "Ya" and
     answers[1] == "Ya" and
     answers[2] == "Ya" and
     answers[6] == "Ya"):
-    return "A01 - Seni Musik"
+    return "A01 - Seni Musik" ``` </pre>
 Setiap aturan merepresentasikan kombinasi jawaban “Ya” yang menunjukkan kecenderungan minat terhadap suatu bidang ekstrakurikuler. Jika tidak ada aturan yang cocok, sistem akan menampilkan pesan:
 **"Tidak ditemukan rekomendasi yang cocok berdasarkan jawaban Anda."**
 <img width="1050" height="433" alt="image" src="https://github.com/user-attachments/assets/94e558e4-bf4e-473d-a478-d10a881e6fae" />
