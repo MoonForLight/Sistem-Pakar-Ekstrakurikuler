@@ -6,17 +6,22 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="chat-container">
+  <div class="container">
   <div id="chatBox" class="chat-box"></div>
-  
-  <div class="button-answer-container">
-      <div class="box-button">
-          <button class="button-answer" onclick="sendAnswer('Ya')">Ya</button>
+      <div class="button-answer-container">
+          <div class="box-button">
+              <button class="button-answer" onclick="sendAnswer('Ya')">Ya</button>
+          </div>
+          <div class="box-button">
+              <button class="button-answer" onclick="sendAnswer('Tidak')">Tidak</button>
+          </div>
       </div>
-      <div class="box-button">
-          <button class="button-answer" onclick="sendAnswer('Tidak')">Tidak</button>
+      <div class="wrapper1">
+        <img src="static/assets/2.svg" class="logo" alt="Logo">
+        <img src="static/assets/3.svg" class="logo1" alt="Logo">
+        <img src="static/assets/4.svg" class="logo2" alt="Logo">
+        <img src="static/assets/5.svg" class="logo3" alt="Logo">
       </div>
-  </div>
   </div>
 
   <script>
