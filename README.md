@@ -29,11 +29,11 @@ Aplikasi ini menggunakan pendekatan _rule-based Expert system_, ini dirancang un
 # **Mekanisme Penalaran (_Rule-Based System_)**
 Fungsi utama sistem pakar ini adalah get_result(answers) yang berisi sejumlah aturan (rules).
 Contoh aturan:
-<pre> ```if (answers[0] == "Ya" and
+<pre> if (answers[0] == "Ya" and
     answers[1] == "Ya" and
     answers[2] == "Ya" and
     answers[6] == "Ya"):
-    return "A01 - Seni Musik" ``` </pre>
+    return "A01 - Seni Musik" </pre>
 Setiap aturan merepresentasikan kombinasi jawaban “Ya” yang menunjukkan kecenderungan minat terhadap suatu bidang ekstrakurikuler. Jika tidak ada aturan yang cocok, sistem akan menampilkan pesan:
 **"Tidak ditemukan rekomendasi yang cocok berdasarkan jawaban Anda."**
 <img width="1050" height="433" alt="image" src="https://github.com/user-attachments/assets/94e558e4-bf4e-473d-a478-d10a881e6fae" />
